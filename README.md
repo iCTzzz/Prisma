@@ -4,10 +4,6 @@ Sitio web de demostración de **Prisma**, una escuela ficticia de cursos en lín
 
 > **Todo el contenido es ficticio:** la marca, los cursos, los instructores, las sedes, los precios, las opiniones y los datos de contacto son inventados para mostrar el diseño.
 
-| Computadora | Celular |
-|---|---|
-| ![Inicio en computadora](docs/inicio-computadora.png) | ![Inicio en celular](docs/inicio-celular.png) |
-
 ## Qué incluye
 
 **45 páginas** con header y footer compartidos, versión para computadora y para celular.
