@@ -4,6 +4,10 @@ Sitio web de demostración de **Prisma**, una escuela ficticia de cursos en lín
 
 > **Todo el contenido es ficticio:** la marca, los cursos, los instructores, las sedes, los precios, las opiniones y los datos de contacto son inventados para mostrar el diseño.
 
+| Computadora | Celular |
+|---|---|
+| ![Inicio en computadora](docs/inicio-computadora.png) | ![Inicio en celular](docs/inicio-celular.png) |
+
 ## Qué incluye
 
 **45 páginas** con header y footer compartidos, versión para computadora y para celular.
@@ -39,6 +43,14 @@ Tipografías: **Fraunces** para títulos y **DM Sans** para el resto (Google Fon
 
 Abre `index.html` en el navegador. No necesita servidor.
 
+Cada página es autosuficiente: el estilo y el código del header, el footer y el carrito van dentro de cada `.html`, así que basta con subir los archivos `.html`. La carpeta `docs` solo contiene las capturas de este README.
+
+### Publicarlo con GitHub Pages
+
+1. Crea un repositorio en GitHub y sube el contenido de esta carpeta (o arrástralo en **Add file → Upload files**).
+2. Ve a **Settings → Pages**.
+3. En **Build and deployment**, elige **Deploy from a branch**, la rama `main` y la carpeta `/ (root)`.
+4. Guarda. En unos minutos el sitio estará en `https://<tu-usuario>.github.io/<repositorio>/`.
 
 ## Estructura
 
@@ -54,7 +66,4 @@ programa-*.html            Programas
 certificado*.html, verificar-certificado.html
 conocenos.html, preguntas-frecuentes.html, empresas.html, mentorias.html,
 redes.html, politicas-de-compra.html, aviso-legal.html, mapa-del-sitio.html
-assets/site.css            Header, footer y carrito
-assets/site.js             Menús, carrito y avisos
-assets/favicon.svg
 ```
