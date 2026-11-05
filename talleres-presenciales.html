@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talleres presenciales · Calendario | Prisma</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/site.css">
+<meta name="description" content="Calendario de talleres presenciales y semipresenciales de Prisma: fotografía, cerámica, panadería, café y encuadernación.">
+<style>
+:root{--navy:#1F1A17;--teal:#C24A20;--teal-soft:#E08A5F;--ice:#EBD9C4;--ice-soft:#F6EFE6;--text:#4A403A;--line:#EADFD2;--band:#FBF7F1;--pad:40px}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.6;color:var(--text);background:var(--band)}
+h1,h2,h3,p{margin:0}
+a{color:inherit;text-decoration:none}
+.c{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+
+.hero{background:linear-gradient(135deg,#1A1512,var(--navy) 60%,#3A2C25);padding:52px 0 44px}
+.hero h1{color:#fff;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:32px;line-height:1.2}
+.hero p{color:#F4D9CB;font-size:15.5px;max-width:660px;margin-top:10px}
+.stats{display:flex;gap:28px;margin-top:24px;flex-wrap:wrap}
+.stats div{color:#fff}
+.stats b{display:block;font-family:'DM Sans',system-ui,sans-serif;font-size:24px;line-height:1.1}
+.stats span{font-size:13px;color:#EBD3C3}
+
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:-26px 0 8px;position:relative;box-shadow:0 14px 30px -22px rgba(45,28,18,.45);display:flex;flex-direction:column;gap:10px}
+.frow{display:flex;align-items:center;gap:12px}
+.fl-t{flex:none;width:64px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13px;color:var(--navy)}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filters button{font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:13px;color:var(--navy);background:#fff;border:1px solid var(--ice);border-radius:30px;padding:6px 14px;cursor:pointer}
+.filters button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.res{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;padding-top:8px;border-top:1px solid var(--line)}
+.reset{background:none;border:0;color:var(--teal);font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13px;cursor:pointer;padding:0}
+
+.grp{padding:30px 0 4px}
+.grp[hidden]{display:none}
+.gh{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.gh::after{content:"";flex:1;height:1px;background:var(--ice)}
+.gs{font-size:14px;margin:-6px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 10px 24px -20px rgba(45,28,18,.4);transition:transform .15s,border-color .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);border-color:var(--teal);box-shadow:0 16px 32px -20px rgba(45,28,18,.5)}
+.card[hidden]{display:none}
+.date{flex:none;width:58px;height:64px;border-radius:12px;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'DM Sans',system-ui,sans-serif}
+.date b{font-size:24px;line-height:1}
+.date span{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:3px;color:var(--ice)}
+.date.tbd{background:var(--ice-soft);color:var(--navy)}
+.date.tbd span{color:var(--navy);text-transform:none;letter-spacing:0;font-size:10.5px;line-height:1.25;text-align:center;margin:0}
+.info{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.ar,.md{font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:11px;border-radius:20px;padding:2px 9px}
+.md{background:var(--band);color:var(--text);border:1px solid var(--line)}
+.a-clinica{background:#EEF1E8;color:#4E6B51}
+.a-alimentos{background:#E9F0E9;color:#4E6B51}
+.a-bm{background:var(--ice-soft);color:var(--teal)}
+.a-farma{background:#F3E9EF;color:#7A4466}
+.a-lab{background:#FBF0D9;color:#8A5F12}
+.card h3{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:15px;line-height:1.35;color:var(--navy);margin:2px 0}
+.meta{display:flex;align-items:center;gap:6px;font-size:13px}
+.meta svg{flex:none;color:var(--teal)}
+.foot{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;gap:8px}
+.precio{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:17px;color:var(--navy);white-space:nowrap}
+.precio small{font-size:11px;font-weight:600}
+.extra{font-size:12px;color:var(--teal)}
+.ver{display:inline-flex;align-items:center;gap:5px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13px;color:var(--teal);white-space:nowrap}
+.gc{font-family:'DM Sans',system-ui,sans-serif;font-weight:400;font-size:13px;color:var(--text)}
+.mf,.mmeta{display:none}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);background:var(--ice-soft);border-radius:12px;padding:4px;gap:4px}
+.seg button{border:0;background:none;border-radius:9px;padding:9px 0;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13.5px;color:var(--navy);cursor:pointer}
+.seg button.on{background:#fff;color:var(--teal);box-shadow:0 2px 8px -3px rgba(45,28,18,.35)}
+.sels{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sels label{display:flex;flex-direction:column;gap:3px}
+.sels label span{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:11.5px;color:var(--navy);padding-left:2px}
+.sels select{-webkit-appearance:none;appearance:none;width:100%;font-family:'DM Sans',system-ui,sans-serif;font-size:14px;color:var(--navy);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C24A20' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 12px center;border:1px solid var(--ice);border-radius:10px;padding:10px 30px 10px 12px;text-overflow:ellipsis}
+.empty{background:#fff;border:1px dashed var(--ice);border-radius:14px;padding:22px;text-align:center;margin-top:28px}
+.empty[hidden]{display:none}
+main{padding-bottom:56px}
+
+@media (max-width:1024px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){
+  :root{--pad:14px}
+  .hero{padding:28px 0 40px}
+  .hero h1{font-size:22px}
+  .hero p{font-size:14px;margin-top:6px}
+  .stats{gap:0;margin-top:16px;background:rgba(255,255,255,.08);border-radius:12px;display:grid;grid-template-columns:repeat(3,1fr)}
+  .stats div{padding:10px 8px;text-align:center}
+  .stats div+div{border-left:1px solid rgba(255,255,255,.15)}
+  .stats b{font-size:17px}
+  .stats span{font-size:11.5px}
+  .panel{padding:12px;margin-top:-24px;gap:10px;border-radius:14px}
+  .frow{display:none}
+  .mf{display:flex;flex-direction:column;gap:10px}
+  .res{font-size:13px;padding-top:8px}
+  .grp{padding-top:20px}
+  .gh{font-size:16px;margin-bottom:10px;gap:8px}
+  .grid{grid-template-columns:1fr;gap:8px}
+  .card{padding:12px;gap:12px;border-radius:14px;box-shadow:none;align-items:stretch}
+  .card:hover{transform:none}
+  .date{width:48px;height:auto;min-height:58px;border-radius:10px;align-self:flex-start}
+  .date b{font-size:19px}
+  .date span{font-size:11px}
+  .info{gap:4px}
+  .tags .md{display:none}
+  .ar{font-size:10.5px;padding:2px 8px}
+  .card h3{font-size:14px;line-height:1.3;margin:1px 0}
+  .meta{display:none}
+  .mmeta{display:block;font-size:12.5px;color:var(--text)}
+  .mod-m{font-weight:500;color:var(--teal)}
+  .foot{padding-top:8px;align-items:center}
+  .precio{font-size:15px}
+  .extra{font-size:11.5px}
+  .ver{font-size:0;width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;justify-content:center;flex:none}
+  .ver svg{width:16px;height:16px}
+}
+
+
+
+
+.card h3{display:flex;align-items:center;flex-wrap:wrap;gap:4px 6px;font-size:16px}
+.card h3 svg{color:var(--teal);flex:none}
+.base{white-space:nowrap;flex:none;font-family:'DM Sans',system-ui,sans-serif;font-weight:500;font-size:11px;line-height:1.5;color:#fff;background:var(--teal);border-radius:20px;padding:1px 8px}
+.rows{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.rows li{display:flex;flex-direction:column;line-height:1.35}
+.rows span{font-size:12px;color:var(--teal);font-weight:500}
+.rows b{font-size:13.5px;font-weight:500;color:var(--navy)}
+.pick{padding:30px 0 0}
+.pick .gh{margin-bottom:6px}
+.pick .gs{margin:0 0 14px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.a-online{background:var(--navy);color:#fff}
+.opt-on{text-decoration:none}
+.opt-go{margin-top:auto}
+.opt{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:0 10px 24px -20px rgba(45,28,18,.4);transition:border-color .15s,box-shadow .15s}
+.opt:hover,.opt.on{border-color:var(--teal);box-shadow:0 16px 32px -20px rgba(45,28,18,.5)}
+.opt.on{outline:2px solid var(--teal);outline-offset:-2px}
+.opt-top{display:flex;justify-content:space-between;align-items:center}
+.opt-h{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13px;color:var(--navy)}
+.opt-t{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:16px;line-height:1.35;color:var(--navy)}
+.opt ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.opt li{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;line-height:1.45;color:var(--text)}
+.opt li svg{flex:none;color:var(--teal);margin-top:2px}
+.opt-f{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:10px;border-top:1px solid var(--line)}
+.opt-n{font-size:12.5px;color:var(--teal)}
+.opt-go{display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13px;color:var(--teal)}
+.online{margin-top:34px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(135deg,#1F1A17 0%,#C24A20 100%);border-radius:16px;padding:22px 26px;color:#fff}
+.online h2{margin:0 0 4px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:18px;color:#fff}
+.online p{margin:0;font-size:14px;line-height:1.5;color:#F7E3D8}
+.online .op{display:flex;align-items:center;gap:16px;flex:none}
+.online .op b{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:22px;color:#fff;white-space:nowrap}
+.online .op b small{font-size:12px;font-weight:600;color:#EBD9C4}
+.online a{display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13.5px;color:var(--navy);background:#fff;border-radius:30px;padding:10px 18px;text-decoration:none;white-space:nowrap}
+@media (max-width:640px){
+  .opts{grid-template-columns:1fr;gap:10px}
+  .opt-go{margin-top:0}
+  .opt{padding:14px 16px;gap:8px}
+  .opt-t{font-size:14.5px}
+  .opt ul{display:none}
+  .card h3{font-size:14.5px}
+  .rows{display:flex}
+  .mmeta{display:none!important}
+  .card h3 .base{font-size:10.5px;padding:0 7px}
+  .ar{white-space:nowrap}
+  .info{min-width:0}
+  .rows b{overflow-wrap:anywhere}
+  .opt-top .ar{white-space:nowrap}
+  .opt-f{gap:2px 10px}
+  .opt-n{width:100%}
+  .sels select{font-size:13.5px;padding-right:26px}
+  .stats b{white-space:nowrap}
+  .rows b{font-size:12.5px}
+  .online{flex-direction:column;align-items:stretch;padding:18px 16px;gap:14px}
+  .online h2{font-size:16px}
+  .online p{font-size:13.5px}
+  .online .op{justify-content:space-between}
+  .online .op b{font-size:20px}
+}
+
+.a-retrato,.a-foto{background:#FBF0D9;color:#8A5F12}
+.a-intro{background:#E9F0E9;color:#4E6B51}
+.a-artesania{background:#F3E9EF;color:#7A4466}
+.a-cocina{background:#F7E3D8;color:#A63E1A}
+.a-online{background:#1F1A17;color:#fff}
+.online{background:linear-gradient(135deg,#1F1A17 0%,#8E3518 100%)}
+.hero{background:linear-gradient(135deg,#1A1512,#1F1A17 60%,#3A2C25)}
+
+main h1,main .h2,main h2.h2,main .gh,main .rv-side .h2,main .hero h1,main .hero-card h1{font-family:'Fraunces',Georgia,serif!important;font-weight:600!important;letter-spacing:-.01em}
+</style>
+</head>
+<body><a class="px-skip" href="#contenido">Saltar al contenido</a>
+<header class="px-h"><div class="px-in">
+  <a class="px-logo" href="index.html" aria-label="Prisma, ir al inicio"><svg class="px-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3 27h13z" fill="#D9572B"/><path d="M16 3l13 24H16z" fill="#E8B04A"/><path d="M16 17.5 10.6 27H21.4z" fill="#6F8F72"/></svg><span>Prisma</span></a>
+  <nav class="px-nav" aria-label="Principal"><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Cursos en línea<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu wide"><a href="cursos.html">Todos los cursos</a><a href="cursos.html?area=diseno">Diseño gráfico</a><a href="cursos.html?area=ilustracion">Ilustración</a><a href="cursos.html?area=foto">Fotografía y video</a><a href="cursos.html?area=programacion">Programación y tecnología</a><a href="cursos.html?area=marketing">Marketing digital</a><a href="cursos.html?area=negocios">Negocios y emprendimiento</a><a href="cursos.html?area=datos">Datos e inteligencia artificial</a><a href="cursos.html?area=idiomas">Idiomas y comunicación</a><a href="cursos.html?area=cocina">Cocina y gastronomía</a><a href="cursos.html?area=artesania">Artesanía y oficios</a><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></div></div><div class="px-dd on"><button type="button" class="px-top" aria-expanded="false">Talleres presenciales<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="talleres-presenciales.html">Calendario de talleres</a><a href="fotografia.html">Cursos de Fotografía</a><a href="taller-fotografia-retrato-cdmx.html">Fotografía de retrato · Ciudad de México</a><a href="taller-ceramica-en-torno.html">Cerámica en torno: primeros pasos</a><a href="taller-pan-de-masa-madre.html">Pan de masa madre</a><a href="taller-encuadernacion-artesanal.html">Encuadernación artesanal</a><a href="taller-barismo.html">Barismo: del grano a la taza</a></div></div><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Programas<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="programas.html">Todos los programas</a><a href="programa-diseno-ux-ui.html">Programa en Diseño UX/UI</a><a href="programa-marketing-digital.html">Programa en Marketing digital</a><a href="programa-analisis-de-datos.html">Programa en Análisis de datos con Python</a></div></div><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Otros<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="conocenos.html">Conócenos</a><a href="empresas.html">Prisma para equipos</a><a href="mentorias.html">Mentorías de proyecto</a><a href="certificado.html">Certificado profesional</a><a href="verificar-certificado.html">Verificar un certificado</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a><a href="redes.html">Síguenos en redes</a></div></div></nav>
+  <form class="px-search" action="cursos.html" role="search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Busca tu curso" aria-label="Busca tu curso"></form>
+  <label class="px-cur"><span class="px-sr">Moneda</span><select aria-label="Moneda"><option>MXN ($)</option><option>USD ($)</option><option>EUR (€)</option></select></label>
+  <button type="button" class="px-cart" aria-label="Abrir carrito"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2L21 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg><span class="px-n" data-cart-n>0</span></button>
+  <div class="px-dd px-acc"><button type="button" class="px-user" aria-label="Mi cuenta" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button>
+    <div class="px-menu right"><a href="#" data-soon>Iniciar sesión</a><a href="#" data-soon>Crear cuenta</a><a href="#" data-soon>Mis pedidos</a><a href="#" data-soon>Ajustes de la cuenta</a></div></div>
+  <button type="button" class="px-burger" aria-label="Abrir menú" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
+</div>
+<div class="px-mob" hidden>
+  <form class="px-search m" action="cursos.html" role="search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Busca tu curso" aria-label="Busca tu curso"></form>
+  <details class="px-mg"><summary>Cursos en línea<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="cursos.html">Todos los cursos</a><a href="cursos.html?area=diseno">Diseño gráfico</a><a href="cursos.html?area=ilustracion">Ilustración</a><a href="cursos.html?area=foto">Fotografía y video</a><a href="cursos.html?area=programacion">Programación y tecnología</a><a href="cursos.html?area=marketing">Marketing digital</a><a href="cursos.html?area=negocios">Negocios y emprendimiento</a><a href="cursos.html?area=datos">Datos e inteligencia artificial</a><a href="cursos.html?area=idiomas">Idiomas y comunicación</a><a href="cursos.html?area=cocina">Cocina y gastronomía</a><a href="cursos.html?area=artesania">Artesanía y oficios</a><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></div></details><details class="px-mg"><summary>Talleres presenciales<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="talleres-presenciales.html">Calendario de talleres</a><a href="fotografia.html">Cursos de Fotografía</a><a href="taller-fotografia-retrato-cdmx.html">Fotografía de retrato · Ciudad de México</a><a href="taller-ceramica-en-torno.html">Cerámica en torno: primeros pasos</a><a href="taller-pan-de-masa-madre.html">Pan de masa madre</a><a href="taller-encuadernacion-artesanal.html">Encuadernación artesanal</a><a href="taller-barismo.html">Barismo: del grano a la taza</a></div></details><details class="px-mg"><summary>Programas<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="programas.html">Todos los programas</a><a href="programa-diseno-ux-ui.html">Programa en Diseño UX/UI</a><a href="programa-marketing-digital.html">Programa en Marketing digital</a><a href="programa-analisis-de-datos.html">Programa en Análisis de datos con Python</a></div></details><details class="px-mg"><summary>Otros<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="conocenos.html">Conócenos</a><a href="empresas.html">Prisma para equipos</a><a href="mentorias.html">Mentorías de proyecto</a><a href="certificado.html">Certificado profesional</a><a href="verificar-certificado.html">Verificar un certificado</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a><a href="redes.html">Síguenos en redes</a></div></details>
+  <a class="px-ml" href="index.html">Inicio</a>
+</div></header>
+<div class="px-drawer" hidden><div class="px-dw" role="dialog" aria-modal="true" aria-label="Carrito">
+  <div class="px-dh"><b>Tu carrito</b><button type="button" class="px-close" aria-label="Cerrar carrito"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button></div>
+  <ul class="px-items" data-cart-list></ul>
+  <p class="px-empty" data-cart-empty>Tu carrito está vacío.</p>
+  <div class="px-df"><p class="px-tot"><span>Total</span><b data-cart-total>$0 MXN</b></p><button type="button" class="px-pay" data-pay>Finalizar compra</button>
+  <p class="px-note" data-pay-note hidden>Esta es una versión de muestra: el pago no está habilitado.</p></div>
+</div></div>
+<div class="px-toast" role="status" aria-live="polite" hidden></div>
+<main id="contenido">
+<header class="hero"><div class="c"><h1>Talleres presenciales y semipresenciales</h1><p>Aprende con las manos: talleres de un día y cursos con práctica presencial en Ciudad de México, Guadalajara, Monterrey y Puebla.</p><div class="stats"><div><b>12</b><span>fechas</span></div><div><b>6</b><span>talleres</span></div><div><b>4</b><span>sedes</span></div></div></div></header>
+<div class="c">
+  <div class="panel"><div class="frow"><span class="fl-t">Mes</span><div class="filters" data-k="mes"><button type="button" class="on" data-f="all">Todos</button><button type="button" data-f="11">Noviembre</button><button type="button" data-f="12">Diciembre</button><button type="button" data-f="01">Enero</button></div></div><div class="frow"><span class="fl-t">Área</span><div class="filters" data-k="area"><button type="button" class="on" data-f="all">Todas</button><button type="button" data-f="foto">Fotografía y video</button><button type="button" data-f="artesania">Artesanía y oficios</button><button type="button" data-f="cocina">Cocina y gastronomía</button></div></div><div class="frow"><span class="fl-t">Sede</span><div class="filters" data-k="sede"><button type="button" class="on" data-f="all">Todas</button><button type="button" data-f="cdmx">Ciudad de México</button><button type="button" data-f="gdl">Guadalajara</button><button type="button" data-f="mty">Monterrey</button><button type="button" data-f="pue">Puebla</button></div></div><div class="mf"><div class="seg" data-k="mes" style="grid-template-columns:repeat(4,1fr)"><button type="button" class="on" data-f="all">Todos</button><button type="button" data-f="11">Nov</button><button type="button" data-f="12">Dic</button><button type="button" data-f="01">Ene</button></div><div class="sels"><label><span>Área</span><select data-k="area"><option value="all">Todas</option><option value="foto">Fotografía y video</option><option value="artesania">Artesanía y oficios</option><option value="cocina">Cocina y gastronomía</option></select></label><label><span>Sede</span><select data-k="sede"><option value="all">Todas</option><option value="cdmx">Ciudad de México</option><option value="gdl">Guadalajara</option><option value="mty">Monterrey</option><option value="pue">Puebla</option></select></label></div></div><div class="res"><span id="n"></span><button type="button" class="reset" id="reset" hidden>Quitar filtros</button></div></div>
+  
+  <section class="grp" data-g="11"><h2 class="gh">Noviembre 2026 <small class="gc"></small></h2><div class="grid"><a class="card" href="taller-fotografia-retrato-cdmx.html" data-area="foto" data-sede="cdmx" data-mes="11">
+  <div class="date"><b>14</b><span>nov</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-foto">Fotografía y video</span><span class="md">Semipresencial</span></div>
+    <h3>Fotografía de retrato con luz natural</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>8 h en línea + 6 h de práctica presencial</span></p>
+    <p class="mmeta"><span class="mod-m">Semipresencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">$1,900 <small>MXN</small></p><p class="extra">Con certificado profesional: $2,100</p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="curso-introduccion-a-la-camara.html" data-area="foto" data-sede="cdmx" data-mes="11">
+  <div class="date"><b>15</b><span>nov</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-foto">Fotografía y video</span><span class="md">Presencial</span></div>
+    <h3>Introducción a la cámara: modo manual</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>10:00 a 16:00 h</span></p>
+    <p class="mmeta"><span class="mod-m">Presencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">$1,100 <small>MXN</small></p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="taller-ceramica-en-torno.html" data-area="artesania" data-sede="cdmx" data-mes="11">
+  <div class="date"><b>21</b><span>nov</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-artesania">Artesanía y oficios</span><span class="md">Presencial</span></div>
+    <h3>Cerámica en torno: primeros pasos</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>10:00 a 16:00 h</span></p>
+    <p class="mmeta"><span class="mod-m">Presencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">$1,350 <small>MXN</small></p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="taller-fotografia-retrato-gdl.html" data-area="foto" data-sede="gdl" data-mes="11">
+  <div class="date"><b>28</b><span>nov</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-foto">Fotografía y video</span><span class="md">Semipresencial</span></div>
+    <h3>Fotografía de retrato con luz natural</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Guadalajara</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>8 h en línea + 6 h de práctica presencial</span></p>
+    <p class="mmeta"><span class="mod-m">Semipresencial</span> · Guadalajara</p>
+    <div class="foot"><div><p class="precio">$1,900 <small>MXN</small></p><p class="extra">Con certificado profesional: $2,100</p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="taller-pan-de-masa-madre.html" data-area="cocina" data-sede="cdmx" data-mes="11">
+  <div class="date"><b>28</b><span>nov</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-cocina">Cocina y gastronomía</span><span class="md">Presencial</span></div>
+    <h3>Pan de masa madre</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>9:00 a 15:00 h</span></p>
+    <p class="mmeta"><span class="mod-m">Presencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">$1,200 <small>MXN</small></p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a></div></section><section class="grp" data-g="12"><h2 class="gh">Diciembre 2026 <small class="gc"></small></h2><div class="grid"><a class="card" href="taller-fotografia-retrato-mty.html" data-area="foto" data-sede="mty" data-mes="12">
+  <div class="date"><b>5</b><span>dic</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-foto">Fotografía y video</span><span class="md">Semipresencial</span></div>
+    <h3>Fotografía de retrato con luz natural</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Monterrey</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>8 h en línea + 6 h de práctica presencial</span></p>
+    <p class="mmeta"><span class="mod-m">Semipresencial</span> · Monterrey</p>
+    <div class="foot"><div><p class="precio">$1,900 <small>MXN</small></p><p class="extra">Con certificado profesional: $2,100</p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="taller-barismo.html" data-area="cocina" data-sede="cdmx" data-mes="12">
+  <div class="date"><b>5</b><span>dic</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-cocina">Cocina y gastronomía</span><span class="md">Semipresencial</span></div>
+    <h3>Barismo: del grano a la taza</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>En línea desde el 9 nov · práctica 5 dic</span></p>
+    <p class="mmeta"><span class="mod-m">Semipresencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">Desde $690 <small>MXN</small></p><p class="extra">Teoría + práctica: $1,800</p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="taller-encuadernacion-artesanal.html" data-area="artesania" data-sede="cdmx" data-mes="12">
+  <div class="date"><b>6</b><span>dic</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-artesania">Artesanía y oficios</span><span class="md">Presencial</span></div>
+    <h3>Encuadernación artesanal</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>10:00 a 16:00 h</span></p>
+    <p class="mmeta"><span class="mod-m">Presencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">$980 <small>MXN</small></p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="taller-fotografia-retrato-cdmx.html" data-area="foto" data-sede="cdmx" data-mes="12">
+  <div class="date"><b>12</b><span>dic</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-foto">Fotografía y video</span><span class="md">Semipresencial</span></div>
+    <h3>Fotografía de retrato con luz natural</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>8 h en línea + 6 h de práctica presencial</span></p>
+    <p class="mmeta"><span class="mod-m">Semipresencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">$1,900 <small>MXN</small></p><p class="extra">Con certificado profesional: $2,100</p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="curso-introduccion-a-la-camara.html" data-area="foto" data-sede="cdmx" data-mes="12">
+  <div class="date"><b>13</b><span>dic</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-foto">Fotografía y video</span><span class="md">Presencial</span></div>
+    <h3>Introducción a la cámara: modo manual</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>10:00 a 16:00 h</span></p>
+    <p class="mmeta"><span class="mod-m">Presencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">$1,100 <small>MXN</small></p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a></div></section><section class="grp" data-g="01"><h2 class="gh">Enero 2027 <small class="gc"></small></h2><div class="grid"><a class="card" href="taller-fotografia-retrato-cdmx.html" data-area="foto" data-sede="cdmx" data-mes="01">
+  <div class="date"><b>16</b><span>ene</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-foto">Fotografía y video</span><span class="md">Semipresencial</span></div>
+    <h3>Fotografía de retrato con luz natural</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ciudad de México</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>8 h en línea + 6 h de práctica presencial</span></p>
+    <p class="mmeta"><span class="mod-m">Semipresencial</span> · Ciudad de México</p>
+    <div class="foot"><div><p class="precio">$1,900 <small>MXN</small></p><p class="extra">Con certificado profesional: $2,100</p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a><a class="card" href="taller-fotografia-retrato-pue.html" data-area="foto" data-sede="pue" data-mes="01">
+  <div class="date"><b>23</b><span>ene</span></div>
+  <div class="info">
+    <div class="tags"><span class="ar a-foto">Fotografía y video</span><span class="md">Semipresencial</span></div>
+    <h3>Fotografía de retrato con luz natural</h3>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Puebla</span></p>
+    <p class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>8 h en línea + 6 h de práctica presencial</span></p>
+    <p class="mmeta"><span class="mod-m">Semipresencial</span> · Puebla</p>
+    <div class="foot"><div><p class="precio">$1,900 <small>MXN</small></p><p class="extra">Con certificado profesional: $2,100</p></div><span class="ver">Ver taller <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span></div>
+  </div>
+</a></div></section>
+  <p class="empty" id="empty" hidden>No hay fechas con esa combinación. Prueba con otra sede o mes.</p>
+  <section class="online"><div><h2>¿Buscas un tema de fotografía?</h2><p>Compara el taller de un día, la versión con práctica y el curso en línea en un solo lugar.</p></div><div class="op"><a href="fotografia.html">Cursos de Fotografía <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a></div></section>
+</div>
+</main>
+<script>(function(){
+var KEYS=["mes","area","sede"],sel={},n=document.getElementById('n'),em=document.getElementById('empty'),rs=document.getElementById('reset');
+KEYS.forEach(function(k){sel[k]='all';});
+function apply(){var c=0;document.querySelectorAll('.card').forEach(function(x){var ok=KEYS.every(function(k){return sel[k]==='all'||x.getAttribute('data-'+k)===sel[k];});x.hidden=!ok;if(ok)c++;});
+document.querySelectorAll('.grp').forEach(function(g){var v=g.querySelectorAll('.card:not([hidden])').length;g.hidden=!v;var gc=g.querySelector('.gc');if(gc)gc.textContent=v+(v===1?' fecha':' fechas');});
+document.querySelectorAll('.opt[data-pick]').forEach(function(o){o.classList.toggle('on',o.getAttribute('data-pick')===sel.curso);});
+n.textContent=c+(c===1?' fecha':' fechas');em.hidden=c>0;rs.hidden=KEYS.every(function(k){return sel[k]==='all';});}
+function setK(key,v){sel[key]=v;document.querySelectorAll('[data-k="'+key+'"]').forEach(function(g){if(g.tagName==='SELECT'){g.value=v;}else{g.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-f')===v);});}});apply();}
+document.querySelectorAll('.filters,.seg').forEach(function(g){var key=g.getAttribute('data-k');g.querySelectorAll('button').forEach(function(b){b.onclick=function(){setK(key,b.getAttribute('data-f'));};});});
+document.querySelectorAll('.sels select').forEach(function(s){s.onchange=function(){setK(s.getAttribute('data-k'),s.value);};});
+document.querySelectorAll('.opt[data-pick]').forEach(function(o){o.onclick=function(){var v=o.getAttribute('data-pick');setK('curso',sel.curso===v?'all':v);var g=document.querySelector('.grp:not([hidden])');if(g)g.scrollIntoView({behavior:'smooth',block:'start'});};});
+rs.onclick=function(){KEYS.forEach(function(k){setK(k,'all');});};
+apply();
+})();</script>
+<footer class="px-f"><div class="px-fin">
+  <div class="px-fb">
+    <a class="px-logo light" href="index.html"><svg class="px-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3 27h13z" fill="#D9572B"/><path d="M16 3l13 24H16z" fill="#E8B04A"/><path d="M16 17.5 10.6 27H21.4z" fill="#6F8F72"/></svg><span>Prisma</span></a>
+    <p>Aprende desde todos los ángulos. Cursos en línea, talleres presenciales y programas para aprender algo nuevo.</p>
+    <p class="px-fc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg><span>hola@prisma.example</span></p>
+    <p class="px-fc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>(55) 1234 5678</span></p>
+    <a class="px-fs" href="redes.html">Síguenos en redes <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+  </div>
+  <nav class="px-fm" aria-label="Menú del pie"><h2>Menú</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="conocenos.html">Conócenos</a></li><li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li><li><a href="politicas-de-compra.html">Políticas de compra</a></li><li><a href="verificar-certificado.html">Verificar un certificado</a></li><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="mapa-del-sitio.html">Mapa del sitio</a></li></ul></nav>
+  <nav class="px-fa" aria-label="Áreas"><h2>Nuestras áreas</h2><ul><li><a href="cursos.html?area=diseno">Diseño gráfico</a></li><li><a href="cursos.html?area=ilustracion">Ilustración</a></li><li><a href="cursos.html?area=foto">Fotografía y video</a></li><li><a href="cursos.html?area=programacion">Programación y tecnología</a></li><li><a href="cursos.html?area=marketing">Marketing digital</a></li><li><a href="cursos.html?area=negocios">Negocios y emprendimiento</a></li><li><a href="cursos.html?area=datos">Datos e inteligencia artificial</a></li><li><a href="cursos.html?area=idiomas">Idiomas y comunicación</a></li><li><a href="cursos.html?area=cocina">Cocina y gastronomía</a></li><li><a href="cursos.html?area=artesania">Artesanía y oficios</a></li><li><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></li></ul></nav>
+  <div class="px-fcard"><span class="px-fk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.3L7 21l5-2.6 5 2.6-1.5-7.7"/></svg></span><b>Certificado profesional</b><p>Disponible en cursos y programas participantes, con folio verificable.</p><a href="certificado.html">Conocer más</a></div>
+  <div class="px-fbot"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Col. Roma Norte, Cuauhtémoc, Ciudad de México</span><span>© 2026 Prisma. Sitio de demostración con información ficticia.</span></div>
+</div></footer><script src="assets/site.js" defer></script></body>
+</html>

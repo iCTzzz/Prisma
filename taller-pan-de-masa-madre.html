@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pan de masa madre · Ciudad de México | Prisma</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/site.css">
+<meta name="description" content="Hornea tu primera hogaza de masa madre y llévate tu propio cultivo para seguir haciendo pan en casa.">
+
+<style>
+:root{--navy:#1F1A17;--teal:#C24A20;--teal-soft:#E08A5F;--ice:#EBD9C4;--ice-soft:#F6EFE6;--text:#4A403A;--line:#EADFD2;--band:#FBF7F1;--white:#fff;--radius:14px;--pad:40px}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;color:var(--text);background:var(--white);line-height:1.65;font-size:16px}
+h1,h2,h3,p,ul,ol{margin:0}ul,ol{padding:0;list-style:none}
+h1,h2,h3,.eyebrow,.btn-out,small,.strip b,.price{font-family:'DM Sans',system-ui,sans-serif}
+a{color:var(--teal)}svg{flex-shrink:0}
+:focus-visible{outline:3px solid var(--teal-soft);outline-offset:3px}
+.c{max-width:1120px;margin:0 auto;padding:0 var(--pad)}
+section{padding:64px 0}.band{background:var(--band)}
+.h2{font-weight:700;font-size:30px;line-height:1.2;color:var(--navy);margin-bottom:24px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.dot{display:flex;flex-direction:column;gap:8px}
+.dot li{position:relative;padding-left:20px}
+.dot li::before{content:"";position:absolute;left:2px;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+.hero{background:var(--navy);color:var(--white);padding:72px 0}
+.hero-in{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-weight:700;font-size:46px;line-height:1.1;margin-bottom:20px}
+.sede{display:flex;align-items:center;gap:12px;background:var(--ice);color:var(--navy);font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:20px;padding:12px 18px;border-radius:10px;margin-bottom:22px;width:fit-content;max-width:100%}
+.intro{font-size:17px;line-height:1.7;color:#F3ECE3;margin-bottom:22px;max-width:520px}
+.meta{display:flex;flex-wrap:wrap;gap:12px 32px;margin-bottom:24px}
+.meta li{display:flex;align-items:center;gap:10px;color:#F3ECE3}
+.price{font-weight:700;font-size:32px;margin-bottom:24px}
+.btn-out{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border:1.5px solid var(--ice);border-radius:12px;color:var(--white);font-weight:600;font-size:15px;text-decoration:none;transition:background .15s}
+.btn-out:hover{background:rgba(255,255,255,.1)}
+.himg{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:16px;background:#4A403A}
+.ph{display:flex;align-items:center;justify-content:center;background:#4A403A;color:var(--white)}
+
+.strip{border-bottom:1px solid var(--line)}
+.strip-in{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding-top:26px;padding-bottom:26px}
+.strip small{display:block;font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:4px}
+.strip b{display:block;font-weight:600;font-size:14px;line-height:1.45;color:var(--navy)}
+
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#ddd}
+.map iframe{display:block;width:100%;height:320px;border:0}
+.addr{font-size:14px;margin-top:14px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gimg{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px}
+
+.mods{display:flex;flex-direction:column;gap:26px}
+.mod h3{font-weight:700;font-size:18px;color:var(--navy);margin-bottom:10px}
+.nota{margin-top:30px;font-style:italic}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:#F0F0F0;border-radius:14px;padding:22px}
+.step h3{font-weight:700;font-size:17px;color:var(--teal);margin-bottom:6px}
+.step p{font-size:15px;line-height:1.6}
+
+.xgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.xcard{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.xcard h3{font-weight:700;font-size:18px;color:var(--navy);margin-bottom:14px}
+
+.eyebrow{display:block;font-weight:600;font-size:13px;letter-spacing:.08em;color:var(--teal);text-transform:uppercase;margin-bottom:8px}
+.dl{margin-top:28px;font-weight:500}
+@media (max-width:960px){
+ :root{--pad:28px}
+ .hero-in,.two,.xgrid{grid-template-columns:1fr;gap:36px}
+ .hero h1{font-size:38px}
+ .strip-in{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+ :root{--pad:16px}
+ section{padding:44px 0}.hero{padding:44px 0}
+ .h2{font-size:25px}.hero h1{font-size:32px}
+ .sede{font-size:16px}.price{font-size:28px}
+ .btn-out{width:100%}
+ .strip-in{grid-template-columns:1fr;gap:18px}
+ .steps{grid-template-columns:1fr}
+ .gal{gap:10px}.map iframe{height:260px}
+ .xcard,.cap{padding:22px}
+}
+
+.tipo{display:inline-block;font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ice);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:-6px 0 20px}
+.chip{background:var(--teal);color:var(--white);font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:13px;padding:6px 14px;border-radius:8px}
+.price-note{margin:-16px 0 22px;font-size:14px;color:#EFD9CB}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.prose{display:flex;flex-direction:column;gap:14px}
+.rec{margin-top:18px;padding:16px 20px;border:1px solid var(--teal-soft);border-radius:12px;background:var(--ice-soft);font-size:15px}
+.rec b{color:var(--navy)}
+.caps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.capi{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 6px 18px rgba(31,26,23,.06)}
+.capi svg{color:var(--teal);background:var(--ice-soft);border-radius:50%;padding:4px;width:28px;height:28px;margin-top:1px}
+.psub{margin:-10px 0 22px;font-weight:500;color:var(--navy)}
+.prog{display:flex;flex-direction:column;gap:12px;max-width:760px}
+.prog li{display:flex;gap:18px;align-items:center;padding:16px 20px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.prog .n{flex:0 0 36px;height:36px;border-radius:50%;background:var(--teal);color:var(--white);font-family:'DM Sans',system-ui,sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center}
+.prog li span:last-child{font-weight:500;color:var(--navy)}
+.fechas{display:flex;flex-direction:column;gap:14px}
+.fb{padding:18px 22px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.fb h3{font-size:17px;color:var(--navy);margin-bottom:6px}.fb p{font-size:15px}
+.tec{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.tec li{display:flex;flex-direction:column;gap:10px;font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:13.5px;line-height:1.35;color:var(--navy)}
+.timg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mcard{padding:28px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;gap:12px}
+.mcard h3{font-size:20px;color:var(--navy)}.mcard .dot{flex:1}
+.mh{font-weight:500;color:var(--navy)}
+.mp{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:30px;color:var(--navy)}
+.capw{display:grid;gap:32px;align-items:start}
+.capw.two{grid-template-columns:1fr 1fr}
+.capl{display:flex;flex-direction:column;gap:18px}
+.cap-b{padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}
+.cap-b h3{font-size:20px;color:var(--navy);margin-bottom:10px}
+.cita{margin:0;padding:30px;background:var(--navy);color:var(--white);border-radius:var(--radius);font-style:italic;font-size:16px;line-height:1.75;display:flex;flex-direction:column;gap:16px}
+.apasos{counter-reset:s;display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.apasos li{counter-increment:s;display:flex;gap:14px;align-items:center}
+.apasos li::before{content:counter(s);flex:0 0 30px;height:30px;border-radius:50%;background:var(--teal);color:var(--white);font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.otros{font-size:14px;margin-bottom:22px}
+.asesora{padding:22px 24px;background:var(--ice-soft);border-radius:var(--radius)}
+.asesora h3{font-size:17px;color:var(--navy);margin-bottom:8px}.asesora .hor{margin-top:8px;font-size:14px}
+.pcards{display:flex;flex-direction:column;gap:20px}
+.pcards h3{font-size:17px;color:var(--teal);margin-bottom:10px}.pcards p{font-size:15px;margin-bottom:8px}
+.bank{display:flex;flex-direction:column;gap:4px;font-size:14px}.bank b{color:var(--teal);font-family:'DM Sans',system-ui,sans-serif;font-size:13px}
+.faq{border-bottom:1px solid var(--line);padding:6px 0}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;font-family:'DM Sans',system-ui,sans-serif;font-weight:600;color:var(--navy);list-style:none;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq svg{transition:transform .2s}details[open]>summary svg{transform:rotate(180deg)}
+.faq p{padding:0 0 16px;max-width:820px}
+@media (max-width:960px){.caps,.mgrid,.capw.two{grid-template-columns:1fr}.tec{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.tec{grid-template-columns:repeat(2,1fr)}.btns .btn-out{flex:1 1 100%}.cita{padding:22px}.mcard{padding:22px}}
+
+
+.eds{background:var(--ice-soft);border-bottom:1px solid var(--line);padding:30px 0 34px}
+.eds-t{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--navy);margin:0 0 4px}
+.eds-p{margin:0 0 18px;font-size:15px;color:var(--text)}
+.eds-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ed{display:flex;align-items:center;gap:12px;height:100%;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--ice);color:var(--navy);text-decoration:none;transition:border-color .15s,box-shadow .15s}
+a.ed:hover{border-color:var(--teal);box-shadow:0 8px 20px -14px rgba(45,28,18,.45)}
+.ed svg{flex:none;color:var(--teal)}
+.ed b{display:block;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:15px;line-height:1.3}
+.ed small{display:block;font-size:13px;color:var(--teal);margin-top:2px}
+.ed.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.ed.on svg,.ed.on small{color:#fff}
+@media (max-width:960px){.eds-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.eds{padding:24px 0 26px}.eds-list{gap:10px}.ed{padding:12px}.ed b{font-size:14px}}
+
+
+.cal{background:var(--ice-soft);border-bottom:1px solid var(--line);padding:44px 0 48px}
+.cal .h2{margin-bottom:6px}
+.cal-p{margin:0 0 26px;font-size:15.5px;max-width:760px}
+.cal-month+.cal-month{margin-top:28px}
+.cal-m{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:17px;color:var(--navy);margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--ice)}
+.cal-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.cal-card{background:#fff;border:1px solid var(--ice);border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.cal-card.on{border:2px solid var(--teal);box-shadow:0 14px 30px -20px rgba(45,28,18,.5)}
+.cal-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.cal-sede{display:flex;align-items:center;gap:8px;margin:0;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:16px;color:var(--navy)}
+.cal-sede svg{color:var(--teal)}
+.cal-tag{font-size:12.5px;font-weight:500;color:#fff;background:var(--teal);border-radius:20px;padding:3px 10px}
+.cal-rows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cal-rows li{display:flex;flex-direction:column;gap:1px;font-size:14.5px}
+.cal-rows span{font-size:13px;color:var(--teal);font-weight:500}
+.cal-rows b{font-weight:500;color:var(--navy)}
+.cal-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.cal-price{margin:0;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:18px;color:var(--navy)}
+.cal-btn{display:inline-block;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:14px;padding:10px 18px;border-radius:30px;background:var(--teal);color:#fff;text-decoration:none;white-space:nowrap}
+.cal-btn.out{background:#fff;color:var(--teal);border:1.5px solid var(--teal)}
+@media (max-width:640px){.cal{padding:32px 0 36px}.cal-cards{grid-template-columns:1fr}}
+
+.cal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px 28px;align-items:start}
+.cal-month+.cal-month{margin-top:0}
+.cal-cards{grid-template-columns:1fr}
+.gal:has(> :only-child){grid-template-columns:1fr}
+.gal:has(> :only-child) .gimg{aspect-ratio:16/10;height:auto}
+
+
+.btn-slot{min-height:56px;margin-top:8px}
+
+.dc3{padding:48px 0;border-bottom:1px solid var(--line)}
+.dc-in{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.dc-txt>p{margin:6px 0 20px;font-size:15.5px;max-width:560px}
+.dc-opts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dc-opt{border:1px solid var(--ice);border-radius:14px;padding:18px 20px;background:#fff}
+.dc-opt.hi{border:2px solid var(--teal);background:var(--ice-soft)}
+.dc-n{margin:0;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:15px;color:var(--navy)}
+.dc-p{margin:4px 0 6px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:22px;color:var(--teal)}
+.dc-d{margin:0;font-size:14px;line-height:1.5}
+.dc-req{background:var(--band);border-radius:16px;padding:24px 26px}
+.dc-req h3{margin:0 0 12px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:17px;color:var(--navy)}
+.dc-req ul{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:10px}
+.dc-req li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.5}
+.dc-req li svg{flex:none;width:22px;height:22px;color:var(--teal);background:#fff;border-radius:50%;padding:3px}
+.more{display:block;margin:14px auto 0;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:14px;color:var(--teal);background:#fff;border:1.5px solid var(--teal);border-radius:30px;padding:10px 20px;cursor:pointer}
+@media (max-width:960px){.dc-in{grid-template-columns:1fr;gap:24px}}
+
+
+@media (max-width:640px){
+  section{padding:36px 0}
+  .h2{font-size:22px!important;margin-bottom:12px!important}
+  .two{gap:28px}
+  
+  .strip-in{grid-template-columns:1fr 1fr;gap:14px 16px;padding-top:18px;padding-bottom:18px}
+  .strip-in>div:last-child:nth-child(odd){grid-column:1/-1}
+  
+  .cal-grid,.steps,.xgrid,.gal,.dc-opts{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(var(--pad)*-1);padding:2px var(--pad) 10px;scrollbar-width:none}
+  .cal-grid::-webkit-scrollbar,.steps::-webkit-scrollbar,.xgrid::-webkit-scrollbar,.gal::-webkit-scrollbar,.dc-opts::-webkit-scrollbar{display:none}
+  .cal-month,.step,.xcard,.gimg,.dc-opt{flex:0 0 84%;scroll-snap-align:start}
+  .gal .gimg{aspect-ratio:4/3;height:auto}
+  .gal:has(> :only-child) .gimg{flex-basis:100%}
+  .cal-month+.cal-month{margin-top:0}
+  .cal-p,.dc-txt>p{font-size:14.5px}
+  
+  .caps{gap:8px}
+  .capi{padding:12px 14px;box-shadow:none}
+  .capi span{font-size:14.5px;line-height:1.5}
+  .dc3{padding:32px 0}
+  .dc-req{padding:20px}
+  .dc-link{display:block;text-align:center}
+  .btn-slot{min-height:116px}
+  .map iframe,.map{height:220px}
+}
+.caps li[hidden]{display:none!important}
+@media (max-width:640px){
+  .cal-grid,.steps,.xgrid,.gal,.dc-opts{margin:0!important;padding:2px 0 10px!important}
+  .himg{height:190px!important;aspect-ratio:auto!important}
+  .mods{gap:6px!important}
+  .mod h3{font-size:15.5px!important;margin:0!important}
+  .mod{padding:12px 0!important;border-bottom:1px solid var(--line)}
+  .cal-price{font-size:16px;white-space:nowrap}
+}
+
+
+body{font-size:15px;line-height:1.55}
+.h2{font-size:26px}
+.hero h1{font-size:40px}
+.sede{font-size:17px;padding:10px 16px}
+.intro{font-size:15.5px;line-height:1.6}
+.meta li{font-size:14.5px;line-height:1.5}
+.price{font-size:28px}
+.price-note{font-size:13px}
+.strip small{font-size:12px}
+.strip b{font-size:13.5px}
+.dot li{font-size:14.5px;line-height:1.5}
+.step h3{font-size:16px}.step p{font-size:14px;line-height:1.5}
+.xcard h3,.mod h3{font-size:16.5px}
+.capi span{font-size:14px;line-height:1.5}
+.cal-p,.dc-txt>p{font-size:14.5px;line-height:1.55}
+.cal-m{font-size:16px}
+.cal-sede{font-size:15px}
+.cal-rows li{font-size:14px}
+.cal-price{font-size:17px}
+.dc-req li{font-size:14px}
+.dc-req h3{font-size:16px}
+@media (max-width:640px){
+  body{font-size:14px;line-height:1.5}
+  section{padding:30px 0}
+  .h2{font-size:19px!important}
+  .hero{padding:28px 0 30px}
+  .hero-in{gap:20px}
+  .hero h1{font-size:26px;margin-bottom:12px}
+  .sede{font-size:13px;gap:8px;padding:7px 12px;margin-bottom:14px;border-radius:8px}
+  .sede svg{width:18px;height:18px}
+  .intro{font-size:14px;line-height:1.55;margin-bottom:14px}
+  .meta{margin-bottom:16px}
+  .meta li{font-size:13px;gap:8px;align-items:flex-start}
+  .meta li svg{width:18px;height:18px;margin-top:1px}
+  .price{font-size:24px;margin-bottom:20px}
+  .price-note{font-size:12.5px;margin:-16px 0 14px}
+  .btn-slot{min-height:108px;margin-top:0}
+  .himg{height:170px!important}
+  .strip-in{gap:12px 14px;padding-top:16px;padding-bottom:16px}
+  .strip small{font-size:10.5px;margin-bottom:2px}
+  .strip b{font-size:12.5px;line-height:1.4}
+  .dot{gap:6px}
+  .dot li{font-size:13.5px;padding-left:16px}
+  .dot li::before{width:5px;height:5px}
+  .capi span{font-size:13.5px}
+  .cal-p,.dc-txt>p{font-size:13.5px}
+  .cal-m{font-size:14.5px}
+  .cal-card{padding:16px 18px;gap:10px}
+  .cal-sede{font-size:14px}
+  .cal-rows li{font-size:13px}
+  .cal-rows span{font-size:12px}
+  .cal-price{font-size:15px}
+  .cal-btn{font-size:13px;padding:9px 16px}
+  .step h3{font-size:14.5px}.step p{font-size:13px}
+  .xcard h3{font-size:15px}
+  .mod h3{font-size:14px!important}
+  .dc-n{font-size:14px}.dc-p{font-size:19px}.dc-d{font-size:13px}
+  .dc-req h3{font-size:15px}
+  .dc-req li{font-size:13px}
+  .addr{font-size:13px}
+  .more{font-size:13px;padding:8px 18px}
+}
+
+
+.btns{margin-top:6px}
+.btn-in{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:12px;background:#fff;color:var(--navy);font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:15px;border:0;cursor:pointer}
+.btn-in:hover{background:var(--ice-soft)}
+button.btn-out{background:none;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif}
+button.cal-btn{border:0;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif}
+.hero{background:linear-gradient(135deg,#1A1512,#1F1A17 55%,#3A2C25)}
+@media (max-width:640px){.btns{display:grid;grid-template-columns:1fr;gap:10px}.btn-in,.btns .btn-out{width:100%;min-height:48px}}
+
+main h1,main .h2,main h2.h2,main .gh,main .rv-side .h2,main .hero h1,main .hero-card h1{font-family:'Fraunces',Georgia,serif!important;font-weight:600!important;letter-spacing:-.01em}
+</style>
+</head>
+<body><a class="px-skip" href="#contenido">Saltar al contenido</a>
+<header class="px-h"><div class="px-in">
+  <a class="px-logo" href="index.html" aria-label="Prisma, ir al inicio"><svg class="px-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3 27h13z" fill="#D9572B"/><path d="M16 3l13 24H16z" fill="#E8B04A"/><path d="M16 17.5 10.6 27H21.4z" fill="#6F8F72"/></svg><span>Prisma</span></a>
+  <nav class="px-nav" aria-label="Principal"><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Cursos en línea<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu wide"><a href="cursos.html">Todos los cursos</a><a href="cursos.html?area=diseno">Diseño gráfico</a><a href="cursos.html?area=ilustracion">Ilustración</a><a href="cursos.html?area=foto">Fotografía y video</a><a href="cursos.html?area=programacion">Programación y tecnología</a><a href="cursos.html?area=marketing">Marketing digital</a><a href="cursos.html?area=negocios">Negocios y emprendimiento</a><a href="cursos.html?area=datos">Datos e inteligencia artificial</a><a href="cursos.html?area=idiomas">Idiomas y comunicación</a><a href="cursos.html?area=cocina">Cocina y gastronomía</a><a href="cursos.html?area=artesania">Artesanía y oficios</a><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></div></div><div class="px-dd on"><button type="button" class="px-top" aria-expanded="false">Talleres presenciales<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="talleres-presenciales.html">Calendario de talleres</a><a href="fotografia.html">Cursos de Fotografía</a><a href="taller-fotografia-retrato-cdmx.html">Fotografía de retrato · Ciudad de México</a><a href="taller-ceramica-en-torno.html">Cerámica en torno: primeros pasos</a><a href="taller-pan-de-masa-madre.html">Pan de masa madre</a><a href="taller-encuadernacion-artesanal.html">Encuadernación artesanal</a><a href="taller-barismo.html">Barismo: del grano a la taza</a></div></div><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Programas<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="programas.html">Todos los programas</a><a href="programa-diseno-ux-ui.html">Programa en Diseño UX/UI</a><a href="programa-marketing-digital.html">Programa en Marketing digital</a><a href="programa-analisis-de-datos.html">Programa en Análisis de datos con Python</a></div></div><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Otros<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="conocenos.html">Conócenos</a><a href="empresas.html">Prisma para equipos</a><a href="mentorias.html">Mentorías de proyecto</a><a href="certificado.html">Certificado profesional</a><a href="verificar-certificado.html">Verificar un certificado</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a><a href="redes.html">Síguenos en redes</a></div></div></nav>
+  <form class="px-search" action="cursos.html" role="search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Busca tu curso" aria-label="Busca tu curso"></form>
+  <label class="px-cur"><span class="px-sr">Moneda</span><select aria-label="Moneda"><option>MXN ($)</option><option>USD ($)</option><option>EUR (€)</option></select></label>
+  <button type="button" class="px-cart" aria-label="Abrir carrito"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2L21 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg><span class="px-n" data-cart-n>0</span></button>
+  <div class="px-dd px-acc"><button type="button" class="px-user" aria-label="Mi cuenta" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button>
+    <div class="px-menu right"><a href="#" data-soon>Iniciar sesión</a><a href="#" data-soon>Crear cuenta</a><a href="#" data-soon>Mis pedidos</a><a href="#" data-soon>Ajustes de la cuenta</a></div></div>
+  <button type="button" class="px-burger" aria-label="Abrir menú" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
+</div>
+<div class="px-mob" hidden>
+  <form class="px-search m" action="cursos.html" role="search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Busca tu curso" aria-label="Busca tu curso"></form>
+  <details class="px-mg"><summary>Cursos en línea<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="cursos.html">Todos los cursos</a><a href="cursos.html?area=diseno">Diseño gráfico</a><a href="cursos.html?area=ilustracion">Ilustración</a><a href="cursos.html?area=foto">Fotografía y video</a><a href="cursos.html?area=programacion">Programación y tecnología</a><a href="cursos.html?area=marketing">Marketing digital</a><a href="cursos.html?area=negocios">Negocios y emprendimiento</a><a href="cursos.html?area=datos">Datos e inteligencia artificial</a><a href="cursos.html?area=idiomas">Idiomas y comunicación</a><a href="cursos.html?area=cocina">Cocina y gastronomía</a><a href="cursos.html?area=artesania">Artesanía y oficios</a><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></div></details><details class="px-mg"><summary>Talleres presenciales<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="talleres-presenciales.html">Calendario de talleres</a><a href="fotografia.html">Cursos de Fotografía</a><a href="taller-fotografia-retrato-cdmx.html">Fotografía de retrato · Ciudad de México</a><a href="taller-ceramica-en-torno.html">Cerámica en torno: primeros pasos</a><a href="taller-pan-de-masa-madre.html">Pan de masa madre</a><a href="taller-encuadernacion-artesanal.html">Encuadernación artesanal</a><a href="taller-barismo.html">Barismo: del grano a la taza</a></div></details><details class="px-mg"><summary>Programas<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="programas.html">Todos los programas</a><a href="programa-diseno-ux-ui.html">Programa en Diseño UX/UI</a><a href="programa-marketing-digital.html">Programa en Marketing digital</a><a href="programa-analisis-de-datos.html">Programa en Análisis de datos con Python</a></div></details><details class="px-mg"><summary>Otros<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="conocenos.html">Conócenos</a><a href="empresas.html">Prisma para equipos</a><a href="mentorias.html">Mentorías de proyecto</a><a href="certificado.html">Certificado profesional</a><a href="verificar-certificado.html">Verificar un certificado</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a><a href="redes.html">Síguenos en redes</a></div></details>
+  <a class="px-ml" href="index.html">Inicio</a>
+</div></header>
+<div class="px-drawer" hidden><div class="px-dw" role="dialog" aria-modal="true" aria-label="Carrito">
+  <div class="px-dh"><b>Tu carrito</b><button type="button" class="px-close" aria-label="Cerrar carrito"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button></div>
+  <ul class="px-items" data-cart-list></ul>
+  <p class="px-empty" data-cart-empty>Tu carrito está vacío.</p>
+  <div class="px-df"><p class="px-tot"><span>Total</span><b data-cart-total>$0 MXN</b></p><button type="button" class="px-pay" data-pay>Finalizar compra</button>
+  <p class="px-note" data-pay-note hidden>Esta es una versión de muestra: el pago no está habilitado.</p></div>
+</div></div>
+<div class="px-toast" role="status" aria-live="polite" hidden></div>
+<main id="contenido">
+<header class="hero">
+  <div class="c hero-in">
+    <div class="hero-text">
+      
+      <h1>Pan de masa madre</h1>
+      <p class="sede"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>SEDE: CIUDAD DE MÉXICO</span></p>
+      
+      <p class="intro">Hornea tu primera hogaza de masa madre y llévate tu propio cultivo para seguir haciendo pan en casa.</p>
+      <ul class="meta"><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Práctica: 28 de noviembre de 2026</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>9:00 a 15:00 h</span></li></ul>
+      <p class="price">$1,200 MXN</p>
+      
+      <div class="btns"><button type="button" class="btn-in" data-add="Pan de masa madre" data-price="1200" data-buy>Inscribirme</button><button type="button" class="btn-out" data-add="Pan de masa madre" data-price="1200">Agregar al carrito</button></div>
+    </div>
+    <div class="himg ph" role="img" aria-label="Pan de masa madre (imagen pendiente)"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+  </div>
+</header>
+<div class="strip"><div class="c strip-in"><div><small>Modalidad</small><b>Presencial (taller)</b></div><div><small>Sede de la práctica</small><b>Ciudad de México</b></div><div><small>Fecha de la práctica</small><b>Sábado 28 nov 2026, 9:00–15:00 h</b></div><div><small>Duración</small><b>6 horas</b></div><div><small>Constancia</small><b>Constancia digital incluida</b></div></div></div>
+<section class="band"><div class="c two"><div><h2 class="h2">¿Cómo llegar?</h2><div class="map"><iframe title="Mapa: Sede Ciudad de México" src="https://maps.google.com/maps?q=Roma%20Norte%2C%20Ciudad%20de%20M%C3%A9xico&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><p class="addr">Estudio Prisma Roma · Col. Roma Norte, Cuauhtémoc, Ciudad de México</p></div><div><h2 class="h2">Así se vive el curso</h2><div class="gal"><div class="gimg ph" role="img" aria-label="Así se vive el curso 1 (imagen pendiente)"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div></div></div></div></section>
+<section class=""><div class="c two"><div><h2 class="h2">Descripción</h2><div class="prose"><p>La masa madre es la forma más antigua de hacer pan: solo harina, agua, sal y tiempo. En este taller aprenderás a alimentar y cuidar tu cultivo, a mezclar y fermentar la masa, y a formarla y hornearla en casa sin equipo profesional.</p><p>Cada participante trabaja su propia masa de principio a fin y se lleva una hogaza horneada, una masa lista para hornear al día siguiente y un frasco con masa madre activa.</p></div></div><div><h2 class="h2">Dirigido a</h2><div class="prose"><p>Personas que disfrutan cocinar y quieren hacer pan en casa, sin importar si nunca han horneado.</p></div><p class="rec"><b>Se recomienda</b> llegar en ayunas o con un desayuno ligero: probaremos varios panes durante el día.</p></div></div></section>
+<section class="band"><div class="c"><h2 class="h2">¿Qué aprenderás?</h2><ul class="caps"><li class="capi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5 12.5 10 17.5 19 7.5"/></svg><span>Alimentar y mantener una masa madre.</span></li><li class="capi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5 12.5 10 17.5 19 7.5"/></svg><span>Mezclar, amasar y hacer pliegues.</span></li><li class="capi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5 12.5 10 17.5 19 7.5"/></svg><span>Formar y fermentar una hogaza.</span></li><li class="capi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5 12.5 10 17.5 19 7.5"/></svg><span>Hornear en casa con olla de hierro.</span></li></ul></div></section>
+<section class=""><div class="c" id="temario"><h2 class="h2">Programa académico</h2><p class="psub">Lo que verás durante el día</p><ol class="prog"><li><span class="n">1</span><span>Qué es la masa madre y cómo cuidarla</span></li><li><span class="n">2</span><span>Harinas, hidratación y sal</span></li><li><span class="n">3</span><span>Mezcla, autólisis y pliegues</span></li><li><span class="n">4</span><span>Formado y fermentación en frío</span></li><li><span class="n">5</span><span>Horneado en casa</span></li></ol></div></section>
+<section class="band"><div class="c"><h2 class="h2">Recorrido del taller</h2><ol class="steps"><li class="step"><h3>01</h3><p>Degustación de panes y explicación de la masa madre.</p></li><li class="step"><h3>02</h3><p>Mezcla y pliegues de tu propia masa.</p></li><li class="step"><h3>03</h3><p>Formado y horneado de una hogaza preparada.</p></li><li class="step"><h3>04</h3><p>Empaque de tu masa y tu cultivo para llevar.</p></li></ol></div></section>
+<section class=""><div class="c two"><div><h2 class="h2">Tu inscripción incluye</h2><ul class="dot"><li>Ingredientes y uso de horno.</li><li>Un frasco con masa madre activa.</li><li>Recetario digital.</li><li>Constancia digital de participación.</li><li>Comida ligera.</li></ul></div><div><h2 class="h2">¿Qué debes llevar?</h2><ul class="dot"><li>Mandil.</li><li>Un recipiente con tapa para tu masa.</li><li>Cabello recogido.</li></ul></div></div></section>
+<section class="band"><div class="c"><h2 class="h2">Instructor(a)</h2><div class=" capw"><div class="capl"><div class="cap-b"><h3>Chef Andrés Villalobos</h3><p>Cocinero con formación en gastronomía mexicana y panadería. Ha trabajado en cocinas de restaurante y hoy se dedica a la enseñanza.</p></div></div></div></div></section>
+<section class=""><div class="c"><h2 class="h2">Preguntas frecuentes</h2><details class="faq" open><summary>¿Necesito experiencia previa?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><p>No. El taller está pensado para principiantes; si ya tienes experiencia, el instructor ajusta los ejercicios a tu nivel.</p></details><details class="faq" open><summary>¿Están incluidos los materiales?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><p>Sí, todos los materiales del taller están incluidos. Solo trae lo que se indica en «¿Qué debes llevar?».</p></details><details class="faq" open><summary>¿Qué pasa si llego tarde?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><p>Avísanos en cuanto sepas que tendrás un retraso. Hay 15 minutos de tolerancia; después de ese tiempo podrías perder parte de la práctica.</p></details><details class="faq" open><summary>¿Recibo constancia?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><p>Sí. Al terminar el taller recibes una constancia digital de participación por correo.</p></details><details class="faq" open><summary>¿Puedo cambiar de fecha?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><p>Sí, hasta 7 días antes del taller y sujeto a lugares disponibles en otra edición.</p></details></div></section>
+<script>(function(){if(!matchMedia('(max-width:640px)').matches)return;document.querySelectorAll('details.faq').forEach(function(d){d.removeAttribute('open');});document.querySelectorAll('.caps').forEach(function(u){var li=u.querySelectorAll('li');if(li.length<=4)return;li.forEach(function(x,i){if(i>=4)x.hidden=true;});var b=document.createElement('button');b.className='more';b.type='button';b.textContent='Ver los '+li.length+' puntos';var lbl=b.textContent,op=false;b.onclick=function(){op=!op;li.forEach(function(x,i){if(i>=4)x.hidden=!op;});b.textContent=op?'Ver menos':lbl;if(!op)u.scrollIntoView({block:'nearest',behavior:'smooth'});};u.after(b);});})();</script>
+</main>
+<footer class="px-f"><div class="px-fin">
+  <div class="px-fb">
+    <a class="px-logo light" href="index.html"><svg class="px-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3 27h13z" fill="#D9572B"/><path d="M16 3l13 24H16z" fill="#E8B04A"/><path d="M16 17.5 10.6 27H21.4z" fill="#6F8F72"/></svg><span>Prisma</span></a>
+    <p>Aprende desde todos los ángulos. Cursos en línea, talleres presenciales y programas para aprender algo nuevo.</p>
+    <p class="px-fc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg><span>hola@prisma.example</span></p>
+    <p class="px-fc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>(55) 1234 5678</span></p>
+    <a class="px-fs" href="redes.html">Síguenos en redes <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+  </div>
+  <nav class="px-fm" aria-label="Menú del pie"><h2>Menú</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="conocenos.html">Conócenos</a></li><li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li><li><a href="politicas-de-compra.html">Políticas de compra</a></li><li><a href="verificar-certificado.html">Verificar un certificado</a></li><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="mapa-del-sitio.html">Mapa del sitio</a></li></ul></nav>
+  <nav class="px-fa" aria-label="Áreas"><h2>Nuestras áreas</h2><ul><li><a href="cursos.html?area=diseno">Diseño gráfico</a></li><li><a href="cursos.html?area=ilustracion">Ilustración</a></li><li><a href="cursos.html?area=foto">Fotografía y video</a></li><li><a href="cursos.html?area=programacion">Programación y tecnología</a></li><li><a href="cursos.html?area=marketing">Marketing digital</a></li><li><a href="cursos.html?area=negocios">Negocios y emprendimiento</a></li><li><a href="cursos.html?area=datos">Datos e inteligencia artificial</a></li><li><a href="cursos.html?area=idiomas">Idiomas y comunicación</a></li><li><a href="cursos.html?area=cocina">Cocina y gastronomía</a></li><li><a href="cursos.html?area=artesania">Artesanía y oficios</a></li><li><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></li></ul></nav>
+  <div class="px-fcard"><span class="px-fk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.3L7 21l5-2.6 5 2.6-1.5-7.7"/></svg></span><b>Certificado profesional</b><p>Disponible en cursos y programas participantes, con folio verificable.</p><a href="certificado.html">Conocer más</a></div>
+  <div class="px-fbot"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Col. Roma Norte, Cuauhtémoc, Ciudad de México</span><span>© 2026 Prisma. Sitio de demostración con información ficticia.</span></div>
+</div></footer><script src="assets/site.js" defer></script></body>
+</html>

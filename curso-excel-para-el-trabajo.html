@@ -1,0 +1,186 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excel para el trabajo: fórmulas y tablas dinámicas | Prisma</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/site.css"><meta name="description" content="Deja de hacer a mano lo que Excel puede hacer por ti: fórmulas, tablas dinámicas, gráficos y formatos condicionales.">
+<style>
+:root{--navy:#1F1A17;--teal:#C24A20;--teal-soft:#E08A5F;--ice:#EBD9C4;--ice-soft:#F6EFE6;--text:#4A403A;--line:#EADFD2;--band:#FBF7F1;--pad:40px}
+*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+html,body{width:100%;overflow-x:hidden}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.55;color:var(--text);background:#fff}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit;text-decoration:none}
+.c{max-width:1680px;margin:0 auto;padding:0 clamp(var(--pad),5vw,96px)}
+section{padding:56px 0}.band{background:var(--band)}
+.h2{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:26px;line-height:1.25;color:var(--navy);margin-bottom:18px}
+.lead{font-size:15.5px;line-height:1.6;max-width:760px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 24px;border-radius:30px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:14px;border:1.5px solid transparent;transition:background .15s;cursor:pointer}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--navy)}
+.btn-white{background:#fff;color:var(--navy)}.btn-white:hover{background:var(--ice-soft)}
+.btn-ghost{border-color:#fff;color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-o{border-color:var(--teal);color:var(--teal);background:#fff}.btn-o:hover{background:var(--ice-soft)}
+.hero{background:linear-gradient(135deg,#B8441D 0%,var(--teal) 45%,#8E3518 100%);color:#fff;padding:52px 0 46px}
+.hero h1{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:38px;line-height:1.15}
+.hero p{font-size:16px;line-height:1.55;color:#FBE3D6;margin-top:12px;max-width:640px}
+.ph{background:#4A403A;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:18px}
+.contact{background:var(--teal);color:#fff;padding:28px 0}
+.contact .c{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.contact h2{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:20px;margin-bottom:4px}
+.contact p{font-size:14px;color:#FBE3D6}.contact .btn{flex:none}
+.center{display:flex;justify-content:center;margin-top:26px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cc{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 26px -20px rgba(45,28,18,.45);transition:transform .15s,border-color .15s,box-shadow .15s}
+.cc:hover{transform:translateY(-2px);border-color:var(--teal);box-shadow:0 18px 34px -22px rgba(45,28,18,.55)}
+.cc[hidden]{display:none}
+.cc-pic{position:relative;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--teal))}
+.cc-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .3s}
+.cc:hover .cc-img{transform:scale(1.04)}
+.mode{position:absolute;top:10px;left:10px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:11px;color:#fff;border-radius:20px;padding:4px 10px;box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
+.m-pr{background:var(--teal)}.m-on{background:var(--navy)}
+.cc-body{flex:1;display:flex;flex-direction:column;padding:14px 16px 16px;gap:10px}
+.cc h3{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:14.5px;line-height:1.35;color:var(--navy)}
+.cc-meta{display:flex;flex-direction:column;gap:5px}
+.cc-meta li{display:flex;align-items:center;gap:7px;font-size:13px;line-height:1.35}
+.cc-meta svg{flex:none;color:var(--teal-soft)}
+.cc-foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cc-price{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:17px;color:var(--navy);white-space:nowrap}
+.cc-price small{font-size:11px;font-weight:600}
+.cc-btn{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:12px;color:#fff;background:var(--teal);border-radius:30px;padding:8px 14px;white-space:nowrap}
+.cc:hover .cc-btn{background:var(--navy)}
+.ph{background:#4A403A;color:#fff;display:flex;align-items:center;justify-content:center}
+.cc-foot{flex-wrap:wrap}
+.ph{border-radius:0}
+.cc-img.ph{display:flex}
+.mode.m-pr{background:#1F1A17}.mode.m-on{background:#6F8F72}
+.cc-area{font-size:12px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.04em}
+.cert{display:inline-flex;align-items:center;gap:5px;align-self:flex-start;font-size:11.5px;font-weight:600;color:#8A5F12;background:#FBF0D9;border-radius:20px;padding:3px 9px}
+.search{display:flex;align-items:center;gap:10px;margin-top:22px;max-width:560px;background:#fff;border-radius:30px;padding:0 18px;color:var(--teal)}
+.search input{flex:1;border:0;outline:0;background:none;height:48px;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;color:var(--navy)}
+.tools{background:#fff;border-bottom:1px solid var(--line);padding:16px 0}
+.trow{display:flex;align-items:center;gap:12px;margin:4px 0}
+.tl{flex:none;width:92px;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13px;color:var(--navy)}
+.fchips{display:flex;gap:7px;flex-wrap:wrap}
+.fchips button{font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:13px;color:var(--navy);background:#fff;border:1px solid var(--ice);border-radius:30px;padding:6px 14px;cursor:pointer;white-space:nowrap}
+.fchips button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.tres{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px}
+.tres label{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.tres input{width:18px;height:18px;accent-color:var(--teal)}
+.reset{background:none;border:0;color:var(--teal);font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:13px;cursor:pointer}
+.reset[hidden]{display:none}
+.empty{background:var(--band);border-radius:14px;padding:22px;text-align:center;margin-top:10px}.empty[hidden]{display:none}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+.crumbs{font-size:13.5px;padding:18px 0 0;color:var(--text)}
+.crumbs a{color:var(--teal);font-weight:500}.crumbs span{margin:0 6px;color:var(--ice)}
+.fi{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;padding:22px 0 10px}
+.fi-img{aspect-ratio:16/10;border-radius:18px!important}
+.fi h1{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:32px;line-height:1.15;color:var(--navy);margin:8px 0 8px}
+.fi .by{font-size:14.5px}.fi .by b{color:var(--navy)}
+.fi .pr{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:30px;color:var(--navy);margin:18px 0 4px}
+.fi .pr small{font-size:14px}
+.kv{margin:16px 0 0;border-top:1px solid var(--line)}
+.kv div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.kv dt{color:var(--text)}.kv dd{margin:0;font-weight:600;color:var(--navy);text-align:right}
+.fbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.fbtns .btn{min-height:50px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;margin-top:30px}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:0;background:none;padding:13px 16px;font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:14.5px;color:var(--text);border-bottom:3px solid transparent;cursor:pointer}
+.tabs button.on{color:var(--navy);border-color:var(--teal)}
+.panel{padding:24px 0 8px;max-width:860px}.panel[hidden]{display:none}
+.panel p{font-size:15px;line-height:1.65;margin-bottom:12px}
+.panel h3{font-family:'DM Sans',system-ui,sans-serif;font-size:16px;color:var(--navy);margin:18px 0 8px}
+.ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.ul li{position:relative;padding-left:20px;font-size:15px;line-height:1.5}
+.ul li::before{content:"";position:absolute;left:4px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--teal-soft)}
+.ses{display:flex;flex-direction:column;gap:10px}
+.ses div{border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.ses b{display:block;font-family:'DM Sans',system-ui,sans-serif;color:var(--navy);margin-bottom:4px}
+.ses span{font-size:14px}
+.docb{display:flex;gap:16px;align-items:flex-start}
+.av{flex:none;width:64px;height:64px;border-radius:50%;background:var(--ice-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:20px}
+.rel h2{margin-bottom:18px}
+.rel .grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:860px){.fi{grid-template-columns:1fr;gap:20px}.rel .grid{grid-template-columns:1fr 1fr}}
+
+@media (max-width:640px){
+ :root{--pad:16px} body{font-size:14px;line-height:1.5}
+ .c{padding:0 16px} section{padding:32px 0}
+ .h2{font-size:20px;margin-bottom:12px} .lead{font-size:14px}
+ .hero{padding:30px 0 28px} .hero h1{font-size:25px;line-height:1.2} .hero p{font-size:14px;margin-top:8px}
+ .contact{padding:22px 0} .contact .c{flex-direction:column;align-items:stretch;gap:14px} .contact h2{font-size:17px} .contact p{font-size:13px} .contact .btn{width:100%}
+ .search{margin-top:16px}.search input{height:44px;font-size:14px}
+ .tools{padding:10px 0}.trow{flex-direction:column;align-items:stretch;gap:6px}.tl{width:auto;font-size:12px}
+ .fchips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 2px}.fchips::-webkit-scrollbar{display:none}
+ .fchips button{font-size:12.5px;padding:6px 12px}
+ .tres{flex-wrap:wrap;font-size:13px}
+ .grid{grid-template-columns:1fr;gap:14px}.cc-pic{aspect-ratio:2/1}
+ .cc-meta{flex-direction:row;flex-wrap:wrap;gap:4px 14px} .fi h1{font-size:24px}.fi .pr{font-size:25px}.fi-img{aspect-ratio:16/9}
+ .kv div{font-size:13.5px}.fbtns{grid-template-columns:1fr}
+ .tabs{margin:20px -16px 0;padding:0 16px}.tabs button{padding:11px 12px;font-size:13.5px}
+ .panel p,.ul li{font-size:14px}.rel .grid{grid-template-columns:1fr}
+}
+
+main h1,main .h2,main h2.h2,main .gh,main .rv-side .h2,main .hero h1,main .hero-card h1{font-family:'Fraunces',Georgia,serif!important;font-weight:600!important;letter-spacing:-.01em}
+</style></head><body><a class="px-skip" href="#contenido">Saltar al contenido</a>
+<header class="px-h"><div class="px-in">
+  <a class="px-logo" href="index.html" aria-label="Prisma, ir al inicio"><svg class="px-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3 27h13z" fill="#D9572B"/><path d="M16 3l13 24H16z" fill="#E8B04A"/><path d="M16 17.5 10.6 27H21.4z" fill="#6F8F72"/></svg><span>Prisma</span></a>
+  <nav class="px-nav" aria-label="Principal"><div class="px-dd on"><button type="button" class="px-top" aria-expanded="false">Cursos en línea<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu wide"><a href="cursos.html">Todos los cursos</a><a href="cursos.html?area=diseno">Diseño gráfico</a><a href="cursos.html?area=ilustracion">Ilustración</a><a href="cursos.html?area=foto">Fotografía y video</a><a href="cursos.html?area=programacion">Programación y tecnología</a><a href="cursos.html?area=marketing">Marketing digital</a><a href="cursos.html?area=negocios">Negocios y emprendimiento</a><a href="cursos.html?area=datos">Datos e inteligencia artificial</a><a href="cursos.html?area=idiomas">Idiomas y comunicación</a><a href="cursos.html?area=cocina">Cocina y gastronomía</a><a href="cursos.html?area=artesania">Artesanía y oficios</a><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></div></div><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Talleres presenciales<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="talleres-presenciales.html">Calendario de talleres</a><a href="fotografia.html">Cursos de Fotografía</a><a href="taller-fotografia-retrato-cdmx.html">Fotografía de retrato · Ciudad de México</a><a href="taller-ceramica-en-torno.html">Cerámica en torno: primeros pasos</a><a href="taller-pan-de-masa-madre.html">Pan de masa madre</a><a href="taller-encuadernacion-artesanal.html">Encuadernación artesanal</a><a href="taller-barismo.html">Barismo: del grano a la taza</a></div></div><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Programas<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="programas.html">Todos los programas</a><a href="programa-diseno-ux-ui.html">Programa en Diseño UX/UI</a><a href="programa-marketing-digital.html">Programa en Marketing digital</a><a href="programa-analisis-de-datos.html">Programa en Análisis de datos con Python</a></div></div><div class="px-dd"><button type="button" class="px-top" aria-expanded="false">Otros<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="px-menu"><a href="conocenos.html">Conócenos</a><a href="empresas.html">Prisma para equipos</a><a href="mentorias.html">Mentorías de proyecto</a><a href="certificado.html">Certificado profesional</a><a href="verificar-certificado.html">Verificar un certificado</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a><a href="redes.html">Síguenos en redes</a></div></div></nav>
+  <form class="px-search" action="cursos.html" role="search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Busca tu curso" aria-label="Busca tu curso"></form>
+  <label class="px-cur"><span class="px-sr">Moneda</span><select aria-label="Moneda"><option>MXN ($)</option><option>USD ($)</option><option>EUR (€)</option></select></label>
+  <button type="button" class="px-cart" aria-label="Abrir carrito"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2L21 7H6"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg><span class="px-n" data-cart-n>0</span></button>
+  <div class="px-dd px-acc"><button type="button" class="px-user" aria-label="Mi cuenta" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button>
+    <div class="px-menu right"><a href="#" data-soon>Iniciar sesión</a><a href="#" data-soon>Crear cuenta</a><a href="#" data-soon>Mis pedidos</a><a href="#" data-soon>Ajustes de la cuenta</a></div></div>
+  <button type="button" class="px-burger" aria-label="Abrir menú" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
+</div>
+<div class="px-mob" hidden>
+  <form class="px-search m" action="cursos.html" role="search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Busca tu curso" aria-label="Busca tu curso"></form>
+  <details class="px-mg"><summary>Cursos en línea<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="cursos.html">Todos los cursos</a><a href="cursos.html?area=diseno">Diseño gráfico</a><a href="cursos.html?area=ilustracion">Ilustración</a><a href="cursos.html?area=foto">Fotografía y video</a><a href="cursos.html?area=programacion">Programación y tecnología</a><a href="cursos.html?area=marketing">Marketing digital</a><a href="cursos.html?area=negocios">Negocios y emprendimiento</a><a href="cursos.html?area=datos">Datos e inteligencia artificial</a><a href="cursos.html?area=idiomas">Idiomas y comunicación</a><a href="cursos.html?area=cocina">Cocina y gastronomía</a><a href="cursos.html?area=artesania">Artesanía y oficios</a><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></div></details><details class="px-mg"><summary>Talleres presenciales<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="talleres-presenciales.html">Calendario de talleres</a><a href="fotografia.html">Cursos de Fotografía</a><a href="taller-fotografia-retrato-cdmx.html">Fotografía de retrato · Ciudad de México</a><a href="taller-ceramica-en-torno.html">Cerámica en torno: primeros pasos</a><a href="taller-pan-de-masa-madre.html">Pan de masa madre</a><a href="taller-encuadernacion-artesanal.html">Encuadernación artesanal</a><a href="taller-barismo.html">Barismo: del grano a la taza</a></div></details><details class="px-mg"><summary>Programas<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="programas.html">Todos los programas</a><a href="programa-diseno-ux-ui.html">Programa en Diseño UX/UI</a><a href="programa-marketing-digital.html">Programa en Marketing digital</a><a href="programa-analisis-de-datos.html">Programa en Análisis de datos con Python</a></div></details><details class="px-mg"><summary>Otros<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div><a href="conocenos.html">Conócenos</a><a href="empresas.html">Prisma para equipos</a><a href="mentorias.html">Mentorías de proyecto</a><a href="certificado.html">Certificado profesional</a><a href="verificar-certificado.html">Verificar un certificado</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a><a href="redes.html">Síguenos en redes</a></div></details>
+  <a class="px-ml" href="index.html">Inicio</a>
+</div></header>
+<div class="px-drawer" hidden><div class="px-dw" role="dialog" aria-modal="true" aria-label="Carrito">
+  <div class="px-dh"><b>Tu carrito</b><button type="button" class="px-close" aria-label="Cerrar carrito"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button></div>
+  <ul class="px-items" data-cart-list></ul>
+  <p class="px-empty" data-cart-empty>Tu carrito está vacío.</p>
+  <div class="px-df"><p class="px-tot"><span>Total</span><b data-cart-total>$0 MXN</b></p><button type="button" class="px-pay" data-pay>Finalizar compra</button>
+  <p class="px-note" data-pay-note hidden>Esta es una versión de muestra: el pago no está habilitado.</p></div>
+</div></div>
+<div class="px-toast" role="status" aria-live="polite" hidden></div><main id="contenido">
+<div class="c"><nav class="crumbs" aria-label="Ruta"><a href="index.html">Inicio</a><span>/</span><a href="cursos.html">Cursos</a><span>/</span><a href="cursos.html?area=datos">Datos e inteligencia artificial</a></nav>
+<div class="fi"><div class="fi-img ph" role="img" aria-label="Excel para el trabajo: fórmulas y tablas dinámicas (imagen pendiente)"><svg class="cam" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7.5h3l1.6-2.2h6.8L17 7.5h3a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6"/></svg></div>
+<div><span class="cc-area">Datos e inteligencia artificial</span><h1>Excel para el trabajo: fórmulas y tablas dinámicas</h1><p class="by">Con <b>Lic. Javier Castillo</b></p><span class="cert"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.3L7 21l5-2.6 5 2.6-1.5-7.7"/></svg> Certificado profesional disponible</span>
+<p class="pr">$890 <small>MXN</small></p><dl class="kv"><div><dt>Modalidad</dt><dd>En línea (en vivo)</dd></div><div><dt>Nivel</dt><dd>Intermedio</dd></div><div><dt>Duración</dt><dd>15 horas</dd></div><div><dt>Inicio</dt><dd>18 de noviembre de 2026</dd></div><div><dt>Plataforma</dt><dd>Zoom y aula virtual Prisma</dd></div><div><dt>Certificado</dt><dd>Constancia digital y certificado profesional</dd></div></dl>
+<div class="fbtns"><button type="button" class="btn btn-teal" data-add="Excel para el trabajo: fórmulas y tablas dinámicas" data-price="890" data-buy>Comprar ahora</button><button type="button" class="btn btn-o" data-add="Excel para el trabajo: fórmulas y tablas dinámicas" data-price="890">Agregar al carrito</button></div></div></div>
+<div class="tabs" role="tablist" aria-label="Información del curso"><button type="button" role="tab" id="t-desc" aria-controls="p-desc" aria-selected="true" class=on>Descripción</button><button type="button" role="tab" id="t-tem" aria-controls="p-tem" aria-selected="false">Temario</button><button type="button" role="tab" id="t-fec" aria-controls="p-fec" aria-selected="false">Fechas</button><button type="button" role="tab" id="t-hor" aria-controls="p-hor" aria-selected="false">Horarios</button><button type="button" role="tab" id="t-cap" aria-controls="p-cap" aria-selected="false">Capacitador</button><button type="button" role="tab" id="t-req" aria-controls="p-req" aria-selected="false">Requerimientos</button></div><div class="panel" role="tabpanel" id="p-desc" aria-labelledby="t-desc"><p>Deja de hacer a mano lo que Excel puede hacer por ti: fórmulas, tablas dinámicas, gráficos y formatos condicionales.</p><p>Cada sesión usa archivos de ejemplo de ventas, inventario y presupuesto.</p><h3>Lo que aprenderás</h3><ul class=ul><li>Usar BUSCARX, SI y SUMAR.SI.CONJUNTO.</li><li>Crear tablas dinámicas.</li><li>Presentar datos con gráficos claros.</li><li>Automatizar formatos repetitivos.</li></ul></div><div class="panel" role="tabpanel" id="p-tem" aria-labelledby="t-tem" hidden><div class="ses"><div><b>Sesión 1 · Fórmulas clave</b><span>Referencias · Funciones lógicas</span></div><div><b>Sesión 2 · Búsquedas</b><span>BUSCARX · Validación de datos</span></div><div><b>Sesión 3 · Tablas dinámicas</b><span>Resúmenes · Segmentaciones</span></div><div><b>Sesión 4 · Presentación</b><span>Gráficos · Formato condicional</span></div></div></div><div class="panel" role="tabpanel" id="p-fec" aria-labelledby="t-fec" hidden><p><b>Inicio:</b> 18 de noviembre de 2026.</p><p>Las fechas de cada sesión se confirman por correo al inscribirte. Si no puedes asistir a alguna, tendrás la grabación en el aula virtual.</p></div><div class="panel" role="tabpanel" id="p-hor" aria-labelledby="t-hor" hidden><p>Miércoles · 18:00 a 21:00 h. Hora de la Ciudad de México.</p></div><div class="panel" role="tabpanel" id="p-cap" aria-labelledby="t-cap" hidden><div class="docb"><span class="av" aria-hidden="true">JC</span><div><h3 style="margin-top:4px">Lic. Javier Castillo</h3><p>Analista financiero y formador en herramientas de productividad. Usa Excel a diario para reportes, presupuestos y análisis de ventas.</p></div></div></div><div class="panel" role="tabpanel" id="p-req" aria-labelledby="t-req" hidden><ul class=ul><li>Computadora con Excel o una hoja de cálculo compatible.</li><li>Manejo básico de Excel.</li></ul></div></div>
+<section class="band rel"><div class="c"><h2 class="h2">También te puede interesar</h2><div class="grid"><a class="cc" href="curso-ia-para-tu-dia-a-dia.html">
+  <div class="cc-pic"><span class="cc-img ph" role="img" aria-label="Inteligencia artificial para tu día a día (imagen pendiente)"><svg class="cam" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7.5h3l1.6-2.2h6.8L17 7.5h3a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6"/></svg></span><span class="mode m-on">En línea (en vivo)</span></div>
+  <div class="cc-body"><span class="cc-area">Datos e inteligencia artificial</span>
+    <h3>Inteligencia artificial para tu día a día</h3>
+    <ul class="cc-meta"><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="20" x2="6" y2="13"/><line x1="12" y1="20" x2="12" y2="8"/><line x1="18" y1="20" x2="18" y2="4"/></svg><span>Básico</span></li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>10 horas totales</span></li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="11" x2="21" y2="11"/></svg><span>Inicia: 21 de noviembre de 2026</span></li></ul>
+    <div class="cc-foot"><p class="cc-price">$790 <small>MXN</small></p><span class="cc-btn">Más información</span></div>
+  </div>
+</a><a class="cc" href="curso-diseno-de-logotipos.html">
+  <div class="cc-pic"><span class="cc-img ph" role="img" aria-label="Diseño de logotipos: de la idea al manual de marca (imagen pendiente)"><svg class="cam" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7.5h3l1.6-2.2h6.8L17 7.5h3a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6"/></svg></span><span class="mode m-on">En línea (en vivo)</span></div>
+  <div class="cc-body"><span class="cc-area">Diseño gráfico</span>
+    <h3>Diseño de logotipos: de la idea al manual de marca</h3><span class="cert"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.3L7 21l5-2.6 5 2.6-1.5-7.7"/></svg> Certificado profesional</span>
+    <ul class="cc-meta"><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="20" x2="6" y2="13"/><line x1="12" y1="20" x2="12" y2="8"/><line x1="18" y1="20" x2="18" y2="4"/></svg><span>Básico</span></li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>16 horas totales</span></li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="11" x2="21" y2="11"/></svg><span>Inicia: 9 de noviembre de 2026</span></li></ul>
+    <div class="cc-foot"><p class="cc-price">$990 <small>MXN</small></p><span class="cc-btn">Más información</span></div>
+  </div>
+</a><a class="cc" href="curso-ilustracion-digital-procreate.html">
+  <div class="cc-pic"><span class="cc-img ph" role="img" aria-label="Ilustración digital en Procreate (imagen pendiente)"><svg class="cam" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7.5h3l1.6-2.2h6.8L17 7.5h3a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6"/></svg></span><span class="mode m-on">En línea (en vivo)</span></div>
+  <div class="cc-body"><span class="cc-area">Ilustración</span>
+    <h3>Ilustración digital en Procreate</h3>
+    <ul class="cc-meta"><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="20" x2="6" y2="13"/><line x1="12" y1="20" x2="12" y2="8"/><line x1="18" y1="20" x2="18" y2="4"/></svg><span>Básico</span></li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>12 horas totales</span></li><li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="11" x2="21" y2="11"/></svg><span>Inicia: 10 de noviembre de 2026</span></li></ul>
+    <div class="cc-foot"><p class="cc-price">$890 <small>MXN</small></p><span class="cc-btn">Más información</span></div>
+  </div>
+</a></div></div></section></main>
+<div class="contact"><div class="c"><div><h2>¿Prefieres hablar con alguien?</h2><p>Atención: lunes a viernes de 9:00 a 18:00 h · sábado de 9:00 a 14:00 h</p></div><a class="btn btn-white" href="https://wa.me/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg> Escríbenos por WhatsApp</a></div></div>
+<script>(function(){var bs=[].slice.call(document.querySelectorAll('.tabs button'));bs.forEach(function(b){b.onclick=function(){bs.forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-selected',on?'true':'false');document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});};});})();</script><footer class="px-f"><div class="px-fin">
+  <div class="px-fb">
+    <a class="px-logo light" href="index.html"><svg class="px-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3 27h13z" fill="#D9572B"/><path d="M16 3l13 24H16z" fill="#E8B04A"/><path d="M16 17.5 10.6 27H21.4z" fill="#6F8F72"/></svg><span>Prisma</span></a>
+    <p>Aprende desde todos los ángulos. Cursos en línea, talleres presenciales y programas para aprender algo nuevo.</p>
+    <p class="px-fc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg><span>hola@prisma.example</span></p>
+    <p class="px-fc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>(55) 1234 5678</span></p>
+    <a class="px-fs" href="redes.html">Síguenos en redes <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+  </div>
+  <nav class="px-fm" aria-label="Menú del pie"><h2>Menú</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="conocenos.html">Conócenos</a></li><li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li><li><a href="politicas-de-compra.html">Políticas de compra</a></li><li><a href="verificar-certificado.html">Verificar un certificado</a></li><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="mapa-del-sitio.html">Mapa del sitio</a></li></ul></nav>
+  <nav class="px-fa" aria-label="Áreas"><h2>Nuestras áreas</h2><ul><li><a href="cursos.html?area=diseno">Diseño gráfico</a></li><li><a href="cursos.html?area=ilustracion">Ilustración</a></li><li><a href="cursos.html?area=foto">Fotografía y video</a></li><li><a href="cursos.html?area=programacion">Programación y tecnología</a></li><li><a href="cursos.html?area=marketing">Marketing digital</a></li><li><a href="cursos.html?area=negocios">Negocios y emprendimiento</a></li><li><a href="cursos.html?area=datos">Datos e inteligencia artificial</a></li><li><a href="cursos.html?area=idiomas">Idiomas y comunicación</a></li><li><a href="cursos.html?area=cocina">Cocina y gastronomía</a></li><li><a href="cursos.html?area=artesania">Artesanía y oficios</a></li><li><a href="cursos.html?area=bienestar">Bienestar y desarrollo personal</a></li></ul></nav>
+  <div class="px-fcard"><span class="px-fk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.3L7 21l5-2.6 5 2.6-1.5-7.7"/></svg></span><b>Certificado profesional</b><p>Disponible en cursos y programas participantes, con folio verificable.</p><a href="certificado.html">Conocer más</a></div>
+  <div class="px-fbot"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Col. Roma Norte, Cuauhtémoc, Ciudad de México</span><span>© 2026 Prisma. Sitio de demostración con información ficticia.</span></div>
+</div></footer><script src="assets/site.js" defer></script></body></html>
