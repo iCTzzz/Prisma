@@ -43,12 +43,6 @@ Tipografías: **Fraunces** para títulos y **DM Sans** para el resto (Google Fon
 
 Abre `index.html` en el navegador. No necesita servidor.
 
-### Publicarlo con GitHub Pages
-
-1. Crea un repositorio en GitHub y sube el contenido de esta carpeta (o arrástralo en **Add file → Upload files**).
-2. Ve a **Settings → Pages**.
-3. En **Build and deployment**, elige **Deploy from a branch**, la rama `main` y la carpeta `/ (root)`.
-4. Guarda. En unos minutos el sitio estará en `https://<tu-usuario>.github.io/<repositorio>/`.
 
 ## Estructura
 
